@@ -6,6 +6,7 @@ public class Ex5 {
 
         var iteratorFirst = first.iterator();
         var iteratorSecond = second.iterator();
+
         return Stream.generate(() -> null)
                 .takeWhile(o -> iteratorFirst.hasNext())
                 .takeWhile(o -> iteratorSecond.hasNext())

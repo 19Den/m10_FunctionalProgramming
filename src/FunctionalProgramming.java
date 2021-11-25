@@ -16,7 +16,7 @@ public class FunctionalProgramming {
         //System.out.println(ex1.getStrings(list));
 
         //Ex2 ex2 = new Ex2();
-        //System.out.println(ex2.uppercaseSorted(list));
+        //System.out.println(ex2.uppercaseSorting(list));
 
         //Ex3 ex3 = new Ex3();
         //System.out.println(ex3.extractDigits("[\"1, 2, 0\", \"4, 5\"]"));

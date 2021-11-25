@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Ex2 {
-    public ArrayList<String> uppercaseSorted(ArrayList<String> strings) {
-        ArrayList<String> listOfNames = new ArrayList<String>();
-        for (String str : strings) {
-            listOfNames.add(str);
-        }
-        listOfNames.replaceAll(String::toUpperCase);
-        listOfNames.sort(Comparator.naturalOrder());
-        listOfNames.sort(Comparator.reverseOrder());
-        return listOfNames;
+
+    public ArrayList<String> uppercaseSorting(ArrayList<String> strings) {
+
+        List<String> result = strings.stream()
+                .map(s -> s.toUpperCase())
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        return (ArrayList<String>) result;
     }
 }

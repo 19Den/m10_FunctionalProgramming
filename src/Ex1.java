@@ -1,16 +1,21 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Ex1 {
 
     public String getStrings(ArrayList<String> strings) {
-        String concatination = "";
-        ArrayList<String> listOfNames = new ArrayList<String>();
-        for (String str : strings) {
-            listOfNames.add(str);
-            if ((listOfNames.indexOf(str) % 2) != 0) {
-                concatination = concatination.concat(listOfNames.indexOf(str) + ". " + listOfNames.get(listOfNames.indexOf(str)) + ", ");
-            }
-        }
-        return concatination.substring(0, concatination.length() - 2);
+
+        List<String> oddList = IntStream
+                .range(0, strings.size())
+                .mapToObj(i -> i + ". " + strings.get(i))
+                .filter(s -> s.charAt(0) % 2 != 0)
+                .collect(Collectors.toList());
+
+        return oddList
+                .stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining(", "));
     }
 }
